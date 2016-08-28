@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import io.github.kuyer.common.Strings;
 import io.github.kuyer.sqlreport.service.DataSourceService;
 import io.github.kuyer.sqlreport.service.entity.DataSourceEntity;
 
@@ -39,8 +40,8 @@ public class DataSourceWeb {
 	@RequestMapping(value="/edit", method=RequestMethod.GET)
 	public String edit(@RequestParam(value="id", required=false, defaultValue="") String id, Model model) {
 		DataSourceEntity datasource = null;
-		if(null!=id && id.trim().length()>=1) {
-			datasource = dataSourceService.getDataSourceById(id.trim());
+		if(Strings.isNotEmpty(id)) {
+			datasource = dataSourceService.getDataSourceById(Strings.getString(id));
 		}
 		if(null == datasource) {
 			datasource = new DataSourceEntity();
