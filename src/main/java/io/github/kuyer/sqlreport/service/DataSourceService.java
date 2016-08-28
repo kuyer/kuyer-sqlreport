@@ -1,6 +1,10 @@
 package io.github.kuyer.sqlreport.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import io.github.kuyer.sqlreport.service.entity.DataSourceEntity;
+import io.github.kuyer.sqlreport.service.repository.DataSourceRepository;
 
 /**
  * 数据源服务
@@ -8,5 +12,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DataSourceService {
+
+	@Autowired
+	private DataSourceRepository dataSourceRepository;
+	
+	public DataSourceEntity getDataSourceById(String id) {
+		return dataSourceRepository.findOne(id);
+	}
 
 }

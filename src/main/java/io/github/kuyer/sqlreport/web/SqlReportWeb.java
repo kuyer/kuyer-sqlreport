@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class SqlReportWeb implements ErrorController {
 	
+	/** 错误界面路径 **/
+	private static final String PAGE_ERROR_PATH = "/error";
+	
 	/**
 	 * SqlReport首页界面
 	 * @return
@@ -25,14 +28,14 @@ public class SqlReportWeb implements ErrorController {
 	 * 错误界面
 	 * @return
 	 */
-	@RequestMapping(value="/error")
+	@RequestMapping(value=PAGE_ERROR_PATH)
 	public String error() {
 		return "sqlreport-error";
 	}
 
 	@Override
 	public String getErrorPath() {
-		return "/error";
+		return PAGE_ERROR_PATH;
 	}
 
 }
