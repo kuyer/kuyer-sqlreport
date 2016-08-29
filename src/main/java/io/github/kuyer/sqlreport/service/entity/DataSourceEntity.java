@@ -20,7 +20,7 @@ public class DataSourceEntity {
 	/** 数据源名称 **/
 	@Field(type=FieldType.String, store=true)
 	private String name;
-	/** 数据库类型 **/
+	/** 数据源类型 **/
 	@Field(type=FieldType.String, index=FieldIndex.not_analyzed, store=true)
 	private String type;
 	/** 驱动类 **/

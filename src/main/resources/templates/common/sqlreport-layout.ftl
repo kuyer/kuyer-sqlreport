@@ -21,10 +21,10 @@ remark: 布局页面
 	<div class="view header">
 		<div class="wrap cleax">
 			<div class="item"><a href="<@s.url '/' />" class="title">枯叶数据报表</a></div>
-			<div class="item"><a href="<@s.url '/' />" class="active"><span>首页</span></a></div>
-			<div class="item"><a href="<@s.url '/datasource' />"><span>数据源配置</span></a></div>
-			<div class="item"><a href="<@s.url '/sql' />"><span>数据语句配置</span></a></div>
-			<div class="item"><a href="<@s.url '/report' />"><span>任务报表配置</span></a></div>
+			<div class="item"><a href="<@s.url '/' />" class="<#if hitem?if_exists=='main'>active</#if>"><span>首页</span></a></div>
+			<div class="item"><a href="<@s.url '/datasource' />" class="<#if hitem?if_exists=='datasource'>active</#if>"><span>数据源配置</span></a></div>
+			<div class="item"><a href="<@s.url '/sql' />" class="<#if hitem?if_exists=='sql'>active</#if>"><span>数据语句配置</span></a></div>
+			<div class="item"><a href="<@s.url '/report' />" class="<#if hitem?if_exists=='report'>active</#if>"><span>任务报表配置</span></a></div>
 		</div>
 	</div>
 	${body}
@@ -36,7 +36,7 @@ remark: 布局页面
 			<span class="split">|</span>
 			<a href="http://kuyer.github.io/service.html" target="_blank">服务中心</a>
 		</div>
-		<div class="wrap">© 枯叶网络工作组 版权所有</div>
+		<div class="wrap"><a href="http://kuyer.github.io" target="_blank">© 枯叶网络工作室 版权所有</a></div>
 	</div>
 </div>
 <input type="hidden" id="wcontext" value="<@s.url '' />" />

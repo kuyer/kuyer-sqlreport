@@ -206,8 +206,11 @@ body, .page {
 .adt {
 	height: 68px;
 }
+.adt:focus, .edt:focus {
+	border: 1px solid #367fa9;
+}
 .btn {
-	padding: 7px 25px;
+	padding: 10px 28px;
 	border: 1px solid #dedede;
 	border-radius: 2px;
 	outline: none;
@@ -227,7 +230,7 @@ body, .page {
 	color: #3c8dbc;
 	background-color: #ffffff;
 }
-.btn.btn-pri:hover {
+.btn.btn-pri:hover, .btn.btn-pri:disabled, .btn.btn-pri.fill {
 	color: #ffffff;
 	background-color: #3c8dbc;
 }
@@ -311,6 +314,15 @@ body, .page {
 	margin: 9px 0px;
 	border-bottom: 1px solid #dedede;
 }
+.box .h1, .box .h1 a {
+	font-size: 45px;
+}
+.box .h2, .box .h2 a {
+	font-size: 36px;
+}
+.box .h3, .box .h3 a {
+	font-size: 28px;
+}
 .box .title, .box .title a {
 	font-size: 24px;
 }
@@ -319,13 +331,6 @@ body, .page {
 }
 .box .desc, .box .desc a {
 	color: #666;
-}
-.box .opt, .box .opt a {
-	color: #666;
-	font-size: 14px;
-}
-.box .opt.active, .box .opt.active a {
-	color: #db4437;
 }
 .box .text, .box .text a {
 	font-size: 16px;
@@ -437,7 +442,7 @@ form .frow.bottom {
 	text-align: center;
 }
 
-.grid {
+.grid, .form {
 	width: 100%;
 	font-size: 16px;
 	border-collapse: collapse;
@@ -454,7 +459,10 @@ form .frow.bottom {
 .grid tr:hover {
 	background-color: #f8f8f8;
 }
-.grid th, .grid td {
+.grid th, .grid td, .form td {
 	padding: 8px;
 	border: 1px solid #dedede;
+}
+.form td.label {
+	background-color: #f8f8f8;
 }
