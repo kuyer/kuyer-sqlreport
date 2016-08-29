@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import io.github.kuyer.common.Constants;
+
 /**
  * SqlReport首页
  * @author rory.zhang
@@ -12,30 +14,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class SqlReportWeb implements ErrorController {
 	
-	/** 错误界面路径 **/
-	private static final String PAGE_ERROR_PATH = "/error";
-	
 	/**
 	 * SqlReport首页界面
 	 * @return
 	 */
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public String index() {
-		return "sqlreport-index";
+		return "sqlreport/sqlreport-index";
 	}
 	
 	/**
 	 * 错误界面
 	 * @return
 	 */
-	@RequestMapping(value=PAGE_ERROR_PATH)
+	@RequestMapping(value=Constants.PAGE_ERROR_PATH)
 	public String error() {
-		return "sqlreport-error";
+		return "sqlreport/sqlreport-error";
 	}
 
 	@Override
 	public String getErrorPath() {
-		return PAGE_ERROR_PATH;
+		return Constants.PAGE_ERROR_PATH;
 	}
 
 }

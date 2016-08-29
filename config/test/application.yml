@@ -1,11 +1,11 @@
 server:
-  port: 11221
+  port: 11113
 
-spring.freemarker:
-  settings:
+spring:
+  freemarker.settings:
     auto_import: /spring.ftl as s,/common/sqlreport-util.ftl as u
   data:
     elasticsearch:
       cluster-name: kuyer
-      cluster-nodes: 127.0.0.1:9300
+#      cluster-nodes: 127.0.0.1:9300
       repositories: true

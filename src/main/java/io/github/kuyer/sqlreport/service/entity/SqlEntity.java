@@ -25,7 +25,7 @@ public class SqlEntity {
 	private String dataSourceId;
 	/** SQL语句 **/
 	@Field(type=FieldType.String, index=FieldIndex.not_analyzed, store=true)
-	private String content;
+	private String sqlcontent;
 	/** 创建时间 **/
 	@Field(type=FieldType.String, index=FieldIndex.not_analyzed, store=true)
 	private Long created;
@@ -51,11 +51,11 @@ public class SqlEntity {
 	public void setDataSourceId(String dataSourceId) {
 		this.dataSourceId = dataSourceId;
 	}
-	public String getContent() {
-		return content;
+	public String getSqlcontent() {
+		return sqlcontent;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setSqlcontent(String sqlcontent) {
+		this.sqlcontent = sqlcontent;
 	}
 	public Long getCreated() {
 		return created;
@@ -72,8 +72,8 @@ public class SqlEntity {
 	
 	@Override
 	public String toString() {
-		return "{\"id\":\"" + id + "\",\"name\":\"" + name + "\",\"dataSourceId\":\"" + dataSourceId
-				+ "\",\"content\":\"" + content + "\",\"created\":\"" + created + "\",\"updated\":\"" + updated + "\"}";
+		return "SqlEntity [id=" + id + ", name=" + name + ", dataSourceId=" + dataSourceId + ", sqlcontent="
+				+ sqlcontent + ", created=" + created + ", updated=" + updated + "]";
 	}
 
 }
