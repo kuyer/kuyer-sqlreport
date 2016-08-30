@@ -3,6 +3,7 @@ package io.github.kuyer.sqlreport.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import io.github.kuyer.sqlreport.api.DataSourceApi;
 import io.github.kuyer.sqlreport.service.entity.DataSourceEntity;
 import io.github.kuyer.sqlreport.service.repository.DataSourceRepository;
 
@@ -11,7 +12,7 @@ import io.github.kuyer.sqlreport.service.repository.DataSourceRepository;
  * @author rory.zhang
  */
 @Service
-public class DataSourceService {
+public class DataSourceService implements DataSourceApi {
 
 	@Autowired
 	private DataSourceRepository dataSourceRepository;
