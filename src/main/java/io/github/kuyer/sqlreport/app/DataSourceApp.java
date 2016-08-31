@@ -3,6 +3,8 @@ package io.github.kuyer.sqlreport.app;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.TaskScheduler;
+import org.springframework.scheduling.support.CronTrigger;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -42,6 +44,22 @@ public class DataSourceApp {
 			return null;
 		}
 		return null;
+	}
+	
+	@Autowired
+	private TaskScheduler taskScheduler;
+	
+	@RequestMapping(value="/test", method=RequestMethod.GET)
+	public Results<Bases> test() {
+		taskScheduler.schedule(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("for test.");
+			}}, new CronTrigger("0/5 * * * * *"));
+		Results<Bases> result = new Results<Bases>();
+		result.setCode("200");
+		result.setDesc("success");
+		return result;
 	}
 
 }
